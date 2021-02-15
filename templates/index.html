@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css')}}">
+    <title>Todo List App</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="judul">Todo List Application</h1>
+        <a href="/create"><input type="button" value="Create"></a>
+        {% if data|length > 0%}
+        <table border = "1" class = "table">
+            <tr>
+                <th>ID</th>
+                <td>Judul Tugas</td>
+                <td>Deskripsi Tugas</td>
+                <td>Deadline</td>
+                <td>Action</td>
+            </tr>
+            {% for datum in data%}
+            <tr>
+                <td>{{ datum.id }}</td>
+                <td>{{ datum.judul_tugas }}</td>
+                <td>{{ datum.deskripsi }}</td>
+                <td>{{ datum.deadline }}</td>
+                <td>
+                    <a href="/update/{{datum.id}}"><input type="button" value="Update"></a>
+                    <a href="/delete/{{datum.id}}"><input type="button" value="Delete"></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h3 class="kosong">Data masih kosong</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

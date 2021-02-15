@@ -1,0 +1,15 @@
+.container{
+    margin: 5px;
+}
+.container > *{
+    margin: 5px;
+}
+.judul{
+    text-align: center;
+}
+.table tr>*{
+    padding: 5px;
+}
+.kosong{
+    text-align: center;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/create.css')}}">
+</head>
+<body>
+    <h1 class="judul">Form Input Data</h1>
+    <form action="/create" method = 'POST' class="form_input" enctype="multipart/form-data">
+        <label for="judul_tugas">Judul Tugas</label><br>
+        <input type="text" name="judul_tugas"><br>
+        <label for="deskripsi">Deskripsi</label><br>
+        <textarea name="deskripsi" id="" cols="30" rows="10"></textarea><br>
+        <label for="deadline">Deadline</label><br>
+        <input type="text" name="deadline"><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
